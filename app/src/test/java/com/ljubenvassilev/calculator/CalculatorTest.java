@@ -44,7 +44,7 @@ public class CalculatorTest {
         calculator.setSecond(3.1d);
         calculator.setOperation(Calculator.Operation.MULTIPLY);
         String value = calculator.calculate();
-        assertEquals("7,75", value);
+        assertEquals("7.75", value);
     }
 
     @Test
@@ -62,7 +62,7 @@ public class CalculatorTest {
         calculator.setSecond(3.1d);
         calculator.setOperation(Calculator.Operation.SUBTRACT);
         String value = calculator.calculate();
-        assertEquals("-0,6", value);
+        assertEquals("-0.6", value);
     }
 
     @Test
@@ -80,7 +80,7 @@ public class CalculatorTest {
         calculator.setSecond(2.0d);
         calculator.setOperation(Calculator.Operation.DIVIDE);
         String value = calculator.calculate();
-        assertEquals("3,75", value);
+        assertEquals("3.75", value);
     }
 
     @Test
