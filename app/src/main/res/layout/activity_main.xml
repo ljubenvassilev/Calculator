@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
         android:textSize="35sp"
         android:textAlignment="textEnd"
         android:paddingRight="10dp"
@@ -34,13 +34,15 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginRight="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
 
                 <Button
                     android:id="@+id/delete"
@@ -52,7 +54,8 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textAlignment="center"
                     android:textSize="35sp"
-                    android:text="C"/>
+                    android:text="C"
+                    android:layout_marginRight="4dp"/>
 
                 <Button
                     android:id="@+id/divide"
@@ -64,7 +67,8 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textAlignment="center"
                     android:textSize="35sp"
-                    android:text="/"/>
+                    android:text="/"
+                    android:layout_marginRight="4dp"/>
 
                 <Button
                     android:id="@+id/multiply"
@@ -84,7 +88,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
 
                 <Button
                     android:id="@+id/seven"
@@ -96,7 +101,8 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textAlignment="center"
                     android:textSize="35sp"
-                    android:text="7"/>
+                    android:text="7"
+                    android:layout_marginRight="4dp"/>
 
                 <Button
                     android:id="@+id/eight"
@@ -108,7 +114,8 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textAlignment="center"
                     android:textSize="35sp"
-                    android:text="8"/>
+                    android:text="8"
+                    android:layout_marginRight="4dp"/>
 
                 <Button
                     android:id="@+id/nine"
@@ -128,7 +135,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
 
                 <Button
                     android:id="@+id/four"
@@ -140,7 +148,8 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textAlignment="center"
                     android:textSize="35sp"
-                    android:text="4"/>
+                    android:text="4"
+                    android:layout_marginRight="4dp"/>
 
                 <Button
                     android:id="@+id/five"
@@ -152,7 +161,8 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textAlignment="center"
                     android:textSize="35sp"
-                    android:text="5"/>
+                    android:text="5"
+                    android:layout_marginRight="4dp"/>
 
                 <Button
                     android:id="@+id/six"
@@ -172,7 +182,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="4dp">
 
                 <Button
                     android:id="@+id/one"
@@ -184,7 +195,8 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textAlignment="center"
                     android:textSize="35sp"
-                    android:text="1"/>
+                    android:text="1"
+                    android:layout_marginRight="4dp"/>
 
                 <Button
                     android:id="@+id/two"
@@ -196,7 +208,8 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textAlignment="center"
                     android:textSize="35sp"
-                    android:text="2"/>
+                    android:text="2"
+                    android:layout_marginRight="4dp"/>
 
                 <Button
                     android:id="@+id/three"
@@ -221,14 +234,15 @@
                 <Button
                     android:id="@+id/zero"
                     android:layout_width="0dp"
-                    android:layout_weight="2"
+                    android:layout_weight="2.03"
                     android:layout_height="match_parent"
                     style="?android:attr/borderlessButtonStyle"
                     android:background="@color/colorAccent"
                     android:textColor="@color/colorPrimaryDark"
                     android:textAlignment="center"
                     android:textSize="35sp"
-                    android:text="0"/>
+                    android:text="0"
+                    android:layout_marginRight="4dp"/>
 
                 <Button
                     android:id="@+id/dot"
@@ -262,24 +276,26 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textAlignment="center"
                 android:textSize="35sp"
-                android:text="-"/>
+                android:text="-"
+                android:layout_marginBottom="4dp"/>
 
             <Button
                 android:id="@+id/add"
                 android:layout_width="match_parent"
-                android:layout_weight="2"
+                android:layout_weight="2.04"
                 android:layout_height="0dp"
                 style="?android:attr/borderlessButtonStyle"
                 android:background="@color/colorAccent"
                 android:textColor="@color/colorPrimaryDark"
                 android:textAlignment="center"
                 android:textSize="35sp"
-                android:text="+"/>
+                android:text="+"
+                android:layout_marginBottom="4dp"/>
 
             <Button
                 android:id="@+id/equals"
                 android:layout_width="match_parent"
-                android:layout_weight="2"
+                android:layout_weight="2.04"
                 android:layout_height="0dp"
                 style="?android:attr/borderlessButtonStyle"
                 android:background="@color/colorAccent"
