@@ -71,6 +71,9 @@ final class Calculator {
                 throw new IncorrectInputException();
         }
         reset();
+        if (result >= 999999999999d){
+            throw new IncorrectInputException();
+        }
         return df.format(result);
     }
 

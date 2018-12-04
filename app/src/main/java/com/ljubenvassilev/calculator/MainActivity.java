@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 public final class MainActivity extends Activity implements View.OnClickListener, View.OnLongClickListener {
 
     private TextView screen;
+    private TextView sign;
     private Calculator calculator;
 
     @Override
@@ -17,6 +18,7 @@ public final class MainActivity extends Activity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         screen = findViewById(R.id.screen);
+        sign = findViewById(R.id.sign);
         calculator = Calculator.getInstance();
         findViewById(R.id.delete).setOnClickListener(this);
         findViewById(R.id.divide).setOnClickListener(this);
@@ -51,27 +53,48 @@ public final class MainActivity extends Activity implements View.OnClickListener
                 calculate();
                 calculator.setOperation(operation);
         }
+        switch (operation){
+            case ADD:
+                sign.setText("+");
+                break;
+            case SUBTRACT:
+                sign.setText("-");
+                break;
+            case MULTIPLY:
+                sign.setText("*");
+                break;
+            case DIVIDE:
+                sign.setText("/");
+                break;
+            default:
+                sign.setText("");
+        }
     }
 
     private void calculate() {
         try {
             String result = calculator.calculate();
             screen.setText(result);
+            sign.setText("");
             calculator.setFirst(Double.parseDouble(result));
         } catch (IncorrectInputException e) {
             screen.setText(R.string.error);
             calculator.reset();
+        } finally {
+            sign.setText("");
         }
     }
 
     private void clear() {
         String text = screen.getText().toString();
         if (text.equalsIgnoreCase("0")){
+            sign.setText("");
             calculator.reset();
             return;
         }
         if (text.length() == 1) {
             screen.setText("0");
+            sign.setText("");
             return;
         }
         screen.setText(text.substring(0, text.length() - 1));
