@@ -159,4 +159,49 @@ public class MainActivityTest {
         onView(withId(R.id.delete)).perform(longClick());
         onView(withId(R.id.screen)).check(matches(withText("0")));
     }
+
+    @Test
+    public void testLongInput(){
+        onView(withId(R.id.one)).perform(click());
+        onView(withId(R.id.two)).perform(click());
+        onView(withId(R.id.three)).perform(click());
+        onView(withId(R.id.four)).perform(click());
+        onView(withId(R.id.five)).perform(click());
+        onView(withId(R.id.six)).perform(click());
+        onView(withId(R.id.seven)).perform(click());
+        onView(withId(R.id.eight)).perform(click());
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.zero)).perform(click());
+        onView(withId(R.id.one)).perform(click());
+        onView(withId(R.id.two)).perform(click());
+        onView(withId(R.id.three)).perform(click());
+        onView(withId(R.id.screen)).check(matches(withText("123456789012")));
+    }
+
+    @Test
+    public void testLongResult(){
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.multiply)).perform(click());
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.nine)).perform(click());
+        onView(withId(R.id.equals)).perform(click());
+        onView(withId(R.id.screen)).check(matches(withText("error")));
+    }
 }
