@@ -1,6 +1,7 @@
 package com.ljubenvassilev.calculator;
 
 import android.app.Activity;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ public final class MainActivity extends Activity implements View.OnClickListener
     private TextView screen;
     private TextView sign;
     private Calculator calculator;
+    private Resources resources;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,24 +22,8 @@ public final class MainActivity extends Activity implements View.OnClickListener
         screen = findViewById(R.id.screen);
         sign = findViewById(R.id.sign);
         calculator = Calculator.getInstance();
-        findViewById(R.id.delete).setOnClickListener(this);
-        findViewById(R.id.divide).setOnClickListener(this);
-        findViewById(R.id.multiply).setOnClickListener(this);
-        findViewById(R.id.subtract).setOnClickListener(this);
-        findViewById(R.id.add).setOnClickListener(this);
-        findViewById(R.id.equals).setOnClickListener(this);
-        findViewById(R.id.dot).setOnClickListener(this);
-        findViewById(R.id.zero).setOnClickListener(this);
-        findViewById(R.id.one).setOnClickListener(this);
-        findViewById(R.id.two).setOnClickListener(this);
-        findViewById(R.id.three).setOnClickListener(this);
-        findViewById(R.id.four).setOnClickListener(this);
-        findViewById(R.id.five).setOnClickListener(this);
-        findViewById(R.id.six).setOnClickListener(this);
-        findViewById(R.id.seven).setOnClickListener(this);
-        findViewById(R.id.eight).setOnClickListener(this);
-        findViewById(R.id.nine).setOnClickListener(this);
         findViewById(R.id.delete).setOnLongClickListener(this);
+        resources = getResources();
     }
 
     private void setOperation(Calculator.Operation operation){
@@ -45,7 +31,7 @@ public final class MainActivity extends Activity implements View.OnClickListener
             case NONE:
                 calculator.setOperation(operation);
                 calculator.setFirst(Double.parseDouble(screen.getText().toString()));
-                screen.setText(R.string.default_screen_zero);
+                screen.setText(R.string.zero);
                 calculator.setState(Calculator.State.ONE);
                 break;
             case ONE:
@@ -55,19 +41,19 @@ public final class MainActivity extends Activity implements View.OnClickListener
         }
         switch (operation){
             case ADD:
-                sign.setText("+");
+                sign.setText(resources.getText(R.string.add));
                 break;
             case SUBTRACT:
-                sign.setText("-");
+                sign.setText(resources.getText(R.string.subtract));
                 break;
             case MULTIPLY:
-                sign.setText("*");
+                sign.setText(resources.getText(R.string.multiply));
                 break;
             case DIVIDE:
-                sign.setText("/");
+                sign.setText(resources.getText(R.string.divide));
                 break;
             default:
-                sign.setText("");
+                sign.setText(resources.getText(R.string.empty));
         }
     }
 
@@ -75,26 +61,26 @@ public final class MainActivity extends Activity implements View.OnClickListener
         try {
             String result = calculator.calculate();
             screen.setText(result);
-            sign.setText("");
+            sign.setText(resources.getText(R.string.empty));
             calculator.setFirst(Double.parseDouble(result));
         } catch (IncorrectInputException e) {
             screen.setText(R.string.error);
             calculator.reset();
         } finally {
-            sign.setText("");
+            sign.setText(resources.getText(R.string.empty));
         }
     }
 
     private void clear() {
         String text = screen.getText().toString();
-        if (text.equalsIgnoreCase("0")){
-            sign.setText("");
+        if (text.equalsIgnoreCase(resources.getText(R.string.zero).toString())){
+            sign.setText(resources.getText(R.string.empty));
             calculator.reset();
             return;
         }
         if (text.length() == 1) {
-            screen.setText("0");
-            sign.setText("");
+            screen.setText(resources.getText(R.string.empty));
+            sign.setText(resources.getText(R.string.empty));
             return;
         }
         screen.setText(text.substring(0, text.length() - 1));
@@ -103,14 +89,17 @@ public final class MainActivity extends Activity implements View.OnClickListener
     private void appendSymbol(String symbol){
         String text = screen.getText().toString();
         if (text.length() >= 12) return;
-        if (text.equalsIgnoreCase("0") && !symbol.equalsIgnoreCase(".")) text = "";
+        if (text.equalsIgnoreCase(resources.getText(R.string.zero).toString()) &&
+                !symbol.equalsIgnoreCase(resources.getText(R.string.dot).toString())) {
+            text = resources.getText(R.string.empty).toString();
+        }
         screen.setText(text.concat(symbol));
     }
 
     @Override
     public void onClick(View v) {
         if (screen.getText().toString().equals(getString(R.string.error))) {
-            screen.setText(R.string.default_screen_zero);
+            screen.setText(R.string.zero);
         }
         switch (v.getId()){
             case R.id.divide:
@@ -139,38 +128,38 @@ public final class MainActivity extends Activity implements View.OnClickListener
                 }
                 break;
             case R.id.dot:
-                if (screen.getText().toString().contains(".")) return;
-                appendSymbol(".");
+                if (screen.getText().toString().contains(resources.getText(R.string.dot))) return;
+                appendSymbol(resources.getText(R.string.dot).toString());
                 break;
             case R.id.zero:
-                appendSymbol("0");
+                appendSymbol(resources.getText(R.string.zero).toString());
                 break;
             case R.id.one:
-                appendSymbol("1");
+                appendSymbol(resources.getText(R.string.one).toString());
                 break;
             case R.id.two:
-                appendSymbol("2");
+                appendSymbol(resources.getText(R.string.two).toString());
                 break;
             case R.id.three:
-                appendSymbol("3");
+                appendSymbol(resources.getText(R.string.three).toString());
                 break;
             case R.id.four:
-                appendSymbol("4");
+                appendSymbol(resources.getText(R.string.four).toString());
                 break;
             case R.id.five:
-                appendSymbol("5");
+                appendSymbol(resources.getText(R.string.five).toString());
                 break;
             case R.id.six:
-                appendSymbol("6");
+                appendSymbol(resources.getText(R.string.six).toString());
                 break;
             case R.id.seven:
-                appendSymbol("7");
+                appendSymbol(resources.getText(R.string.seven).toString());
                 break;
             case R.id.eight:
-                appendSymbol("8");
+                appendSymbol(resources.getText(R.string.eight).toString());
                 break;
             case R.id.nine:
-                appendSymbol("9");
+                appendSymbol(resources.getText(R.string.nine).toString());
                 break;
             default:
                 break;
@@ -180,7 +169,7 @@ public final class MainActivity extends Activity implements View.OnClickListener
     @Override
     public boolean onLongClick(@NonNull View v) {
         if (v.getId() == R.id.delete){
-            screen.setText("0");
+            screen.setText(resources.getText(R.string.zero).toString());
             calculator.reset();
         }
         return false;

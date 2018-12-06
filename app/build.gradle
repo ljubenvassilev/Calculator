@@ -29,4 +29,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
     testImplementation 'junit:junit:' + rootProject.junitVersion
     testImplementation 'org.mockito:mockito-core:' + rootProject.mockitoVersion
+    implementation 'com.android.support.constraint:constraint-layout:' + rootProject.constraintLayoutVersion
 }
