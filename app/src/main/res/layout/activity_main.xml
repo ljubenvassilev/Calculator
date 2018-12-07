@@ -45,18 +45,15 @@
         android:layout_width="189dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
         android:background="@color/colorAccent"
+        android:onClick="onClick"
         android:text="@string/zero"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="2:1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/dot"
-        app:layout_constraintVertical_bias="0.0"
-        android:onClick="onClick" />
+        app:layout_constraintTop_toTopOf="@+id/dot" />
 
     <Button
         android:id="@+id/dot"
@@ -64,18 +61,19 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/colorAccent"
+        android:onClick="onClick"
         android:text="@string/dot"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/equals"
         app:layout_constraintStart_toEndOf="@+id/zero"
-        android:onClick="onClick" />
+        app:layout_constraintTop_toBottomOf="@+id/three" />
 
     <Button
         android:id="@+id/equals"
@@ -139,20 +137,18 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/colorAccent"
+        android:onClick="onClick"
         android:text="@string/three"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="35sp"
         app:layout_constraintBottom_toTopOf="@+id/zero"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@+id/equals"
+        app:layout_constraintEnd_toEndOf="@+id/dot"
         app:layout_constraintStart_toEndOf="@+id/two"
         app:layout_constraintStart_toStartOf="@+id/dot"
-        app:layout_constraintTop_toTopOf="@id/two"
-        android:onClick="onClick" />
+        app:layout_constraintTop_toTopOf="@+id/equals" />
 
     <Button
         android:id="@+id/four"
@@ -179,7 +175,9 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:background="@color/colorAccent"
+        android:onClick="onClick"
         android:text="@string/five"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
@@ -187,26 +185,23 @@
         app:layout_constraintBottom_toBottomOf="@+id/four"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/six"
-        app:layout_constraintStart_toEndOf="@+id/four"
-        android:onClick="onClick" />
+        app:layout_constraintStart_toEndOf="@+id/four" />
 
     <Button
         android:id="@+id/six"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:background="@color/colorAccent"
+        android:onClick="onClick"
         android:text="@string/six"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="@+id/five"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@+id/equals"
-        app:layout_constraintStart_toEndOf="@+id/five"
-        android:onClick="onClick" />
+        app:layout_constraintEnd_toEndOf="@+id/three"
+        app:layout_constraintStart_toStartOf="@+id/three"
+        app:layout_constraintTop_toTopOf="@+id/five" />
 
     <Button
         android:id="@+id/add"
@@ -235,17 +230,17 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/colorAccent"
+        android:onClick="onClick"
         android:text="@string/seven"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="35sp"
-        app:layout_constraintBottom_toTopOf="@+id/four"
-        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toTopOf="@+id/five"
         app:layout_constraintEnd_toStartOf="@+id/eight"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
-        android:onClick="onClick" />
+        app:layout_constraintTop_toTopOf="@+id/nine" />
 
     <Button
         android:id="@+id/eight"
@@ -253,37 +248,35 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:background="@color/colorAccent"
+        android:onClick="onClick"
         android:text="@string/eight"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="@+id/seven"
-        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toBottomOf="@+id/nine"
         app:layout_constraintEnd_toStartOf="@+id/nine"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/seven"
-        android:onClick="onClick" />
+        app:layout_constraintTop_toTopOf="@+id/nine" />
 
     <Button
         android:id="@+id/nine"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/colorAccent"
+        android:onClick="onClick"
         android:text="@string/nine"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="35sp"
         app:layout_constraintBottom_toTopOf="@+id/six"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@+id/add"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/eight"
-        android:onClick="onClick" />
+        app:layout_constraintEnd_toEndOf="@+id/three"
+        app:layout_constraintStart_toStartOf="@+id/six" />
 
     <Button
         android:id="@+id/delete"
@@ -293,15 +286,15 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/colorAccent"
+        android:onClick="onClick"
         android:text="@string/delete"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="35sp"
         app:layout_constraintBottom_toTopOf="@+id/seven"
-        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="@+id/seven"
         app:layout_constraintStart_toStartOf="parent"
-        android:onClick="onClick" />
+        app:layout_constraintTop_toTopOf="@+id/divide" />
 
     <Button
         android:id="@+id/divide"
@@ -311,16 +304,15 @@
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/colorAccent"
+        android:onClick="onClick"
         android:text="@string/divide"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="35sp"
         app:layout_constraintBottom_toTopOf="@+id/eight"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@+id/multiply"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="@+id/eight"
         app:layout_constraintStart_toEndOf="@+id/delete"
-        android:onClick="onClick" />
+        app:layout_constraintTop_toTopOf="@+id/multiply" />
 
     <Button
         android:id="@+id/multiply"
@@ -328,38 +320,32 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/colorAccent"
+        android:onClick="onClick"
         android:text="@string/multiply"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="35sp"
         app:layout_constraintBottom_toTopOf="@+id/nine"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@+id/subtract"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/divide"
-        android:onClick="onClick" />
+        app:layout_constraintEnd_toEndOf="@+id/nine"
+        app:layout_constraintStart_toEndOf="@+id/divide" />
 
     <Button
         android:id="@+id/subtract"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
         android:background="@color/colorAccent"
+        android:onClick="onClick"
         android:text="@string/subtract"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="@+id/multiply"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/multiply"
+        app:layout_constraintEnd_toEndOf="@+id/add"
         app:layout_constraintStart_toStartOf="@+id/add"
-        app:layout_constraintTop_toTopOf="@+id/multiply"
-        android:onClick="onClick" />
+        app:layout_constraintTop_toTopOf="@+id/multiply" />
 
 </android.support.constraint.ConstraintLayout>
